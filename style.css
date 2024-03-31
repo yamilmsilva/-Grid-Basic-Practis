@@ -1,9 +1,15 @@
-/* || RESET */
+/*=============== FONT ===============*/
+
+/*=============== RESET ===============*/
+
 *, *::before, *::after{
     margin: 0;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+	
+    text-decoration: none;
+    list-style: none;
   }
 
 html{
@@ -11,12 +17,8 @@ html{
 }
 
 body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-	background: #0044ff;
-	color: #000;
-	font-family: 'Roboto', sans-serif;
+    background: #E9ECF4;
+    font-family: 'Roboto', sans-serif;
 }
 
 img, picture, video, canvas, svg {
@@ -25,14 +27,15 @@ img, picture, video, canvas, svg {
   }
 
 .container{
-    width: 80%;
-    max-width: 100%;
-    height: 100vh;
-    /* margin:0 0 20px 0; */
+    height: 100vh;  /* this will make full screen*/
+    width: 90%;  /* this will take 90% ffrom both sides */
+    max-width: 1000px;  /* this will limited the expantion of it */
+    margin: 0 auto; /* this will make center works hand to hand with height: 100vh;*/
+	
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 1rem;
     grid-template-columns: 1fr;
-    grid-template-rows: 60px repeat(4, auto) 60px ;
+    grid-template-rows: 6% repeat(4, auto) 60% ;
 /* 
     grid-template-areas: "header header header "
                          "contenido contenido contenido"
@@ -54,20 +57,29 @@ img, picture, video, canvas, svg {
 .container .contenido,
 .container .sidebar,
 .container .footer {
-    background-color: #fff ;
     padding: 20px;
     border-radius: 4px;
 }
 
 .container .header{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	
     background-color: #12203e;
     color: #fff;
-
     grid-area: header;
 }
 
 .container .contenido{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+
     grid-area: contenido;
+    background-color: #d4d4d4;
 
 }
 
@@ -79,7 +91,7 @@ img, picture, video, canvas, svg {
     align-items: center;
     justify-content: center;
 
-    min-height: 200px;
+    min-height: 100px;
 
     grid-area: sidebar;
 }
@@ -88,8 +100,8 @@ img, picture, video, canvas, svg {
 .container .widget-2 {
     background-color: #55a8fd;
     color: #fff;
-    /* height: 100px; */
-    min-height: 200px;
+    height: 100%;
+/*     min-height: 200px; */
     text-align: center;
 
     display: flex;
@@ -109,13 +121,13 @@ img, picture, video, canvas, svg {
 
 
 .container .footer{
-    background-color: #12203e;
-    color: #fff;
-
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-
+	
+    background-color: #12203e;
+    color: #fff;
     grid-area: footer;
 
 
@@ -153,7 +165,7 @@ img, picture, video, canvas, svg {
 
     .container{
        grid-template-columns: 10% 1fr 30%;
-       grid-template-rows: 60px auto auto auto 60px ;
+       grid-template-rows: 6% repeat(3, auto) 6% ;
         grid-template-areas: "header header header "
                              "contenido contenido contenido"
                              "sidebar sidebar sidebar"
@@ -169,8 +181,9 @@ img, picture, video, canvas, svg {
       background-image: radial-gradient(whitesmoke, firebrick)
     }
     .container{
-      grid-template-columns: repeat(2, auto) 30% ;
-        grid-template-rows: 60px auto auto 60px ;
+        grid-gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 6% repeat(2, auto) 6%;
         grid-template-areas: "header header header "
                              "contenido contenido sidebar"
                              "widget-1 widget-2 sidebar"
