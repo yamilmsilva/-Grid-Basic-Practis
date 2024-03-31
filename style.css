@@ -35,7 +35,7 @@ img, picture, video, canvas, svg {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 1fr;
-    grid-template-rows: 6% repeat(4, auto) 60% ;
+    grid-template-rows: 6% repeat(4, auto) 6% ;
 /* 
     grid-template-areas: "header header header "
                          "contenido contenido contenido"
@@ -77,6 +77,7 @@ img, picture, video, canvas, svg {
     align-items: flex-start;
     justify-content: space-evenly;
     flex-direction: column;
+    gap: 1rem;
 
     grid-area: contenido;
     background-color: #d4d4d4;
